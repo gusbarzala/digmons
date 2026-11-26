@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIG.MON — Animal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .arcade-box { box-shadow: 5px 5px 0px #1A1600; }
+    .arcade-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #1A1600; }
+  </style>
+</head>
+<body class="bg-[#FFD400] text-[#1A1600] min-h-screen flex items-center justify-center p-4 font-sans">
+  <div class="w-full max-w-md bg-[#FFF0C6] border-4 border-[#1A1600] rounded arcade-box p-5 flex flex-col gap-4 text-center">
+    <div class="flex justify-between items-center">
+      <a href="ninos.html" class="arcade-btn px-3 py-1 bg-[#FFE177] font-mono text-xs font-bold uppercase border-2 border-[#1A1600] rounded">&larr; NINOS</a>
+      <span class="font-mono text-xs font-bold uppercase">ANIMAL.HTML</span>
+      <a href="pantalla.html" class="arcade-btn px-3 py-1 bg-[#FF6B00] text-[#1A0800] font-mono text-xs font-bold uppercase border-2 border-[#1A1600] rounded">VS &rarr;</a>
+    </div>
+
+    <div class="bg-[#FFE177] border-4 border-[#1A1600] rounded p-5 flex flex-col gap-1">
+      <span id="txt-nino" class="font-mono text-xs font-bold uppercase text-[#005CBA]">NINO: TAI</span>
+      <h1 id="txt-animal" class="text-3xl font-black uppercase">Agumon</h1>
+      <span class="font-mono text-xs font-bold">ETAPA BASE</span>
+    </div>
+
+    <a href="anima/anima.html" class="arcade-btn w-full py-3.5 bg-[#005CBA] text-white font-black text-base uppercase tracking-wider border-4 border-[#1A1600] rounded arcade-box block">
+      DIGIEVOL
+    </a>
+  </div>
+
+  <script>
+    try {
+      var data = JSON.parse(localStorage.getItem("digimon_elegido") || "{}");
+      if (data.nino && data.animal) {
+        document.getElementById("txt-nino").textContent = "NINO: " + data.nino.toUpperCase();
+        document.getElementById("txt-animal").textContent = data.animal;
+      }
+    } catch (err) {}
+  </script>
+</body>
+</html>
