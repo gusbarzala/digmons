@@ -1,0 +1,9 @@
+{
+  "name": "DIG.MON Arcade",
+  "short_name": "DIG.MON",
+  "description": "Sistema de diseño retro-arcade pixelado con compañeros digitales.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFD400",
+  "theme_color": "#005CBA"
+}
