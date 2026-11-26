@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIG.MON — Inicio</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#005CBA">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    globalThis.tailwind = globalThis.tailwind || {};
+    globalThis.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'arcade-yellow': '#FFD400',
+            'digivice-orange': '#FF6B00',
+            'gabumon-blue': '#005CBA',
+            'ink-black': '#1A1600',
+            'light-primary': '#005CBA',
+            'light-on-primary': '#FFFFFF',
+            'light-secondary': '#FF6B00',
+            'light-surface': '#FFD400',
+            'light-on-surface': '#1A1600',
+            'light-surface-container': '#FFF0C6',
+            'light-surface-container-low': '#FFE177',
+            'light-on-surface-variant': '#3B2F00',
+            'light-outline': '#1A1600'
+          },
+          fontFamily: {
+            'display': ['"Press Start 2P"', 'sans-serif'],
+            'headline': ['"Press Start 2P"', 'sans-serif'],
+            'body': ['"Poppins"', 'sans-serif'],
+            'label': ['"Poppins"', 'sans-serif'],
+            'mono': ['"Spline Sans Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Press+Start+2P&family=Spline+Sans+Mono:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet">
+  <style>
+    .arcade-shadow { box-shadow: 4px 4px 0px #1A1600; }
+    .arcade-shadow-sm { box-shadow: 3px 3px 0px #1A1600; }
+    .arcade-shadow-lg { box-shadow: 6px 6px 0px #1A1600; }
+    .arcade-shadow:active, .arcade-shadow-sm:active, .arcade-shadow-lg:active { box-shadow: 2px 2px 0px #1A1600; }
+    .arcade-title-shadow { text-shadow: 4px 4px 0px #FF6B00; }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-screen w-full max-w-md mx-auto px-6 py-6 flex flex-col justify-between gap-6">
+    <header class="flex items-center justify-between">
+      <div class="inline-flex items-center gap-1 px-2 py-1 bg-light-surface-container border-2 border-light-outline rounded-sm">
+        <span class="font-mono text-xs font-semibold text-light-on-surface">VER 1.0</span>
+      </div>
+      <button id="sound-toggle" type="button" aria-label="Alternar sonido" class="inline-flex items-center justify-center w-12 h-12 bg-light-surface-container text-light-on-surface border-4 border-light-outline rounded arcade-shadow">
+        <span id="sound-icon" class="material-symbols-outlined">volume_up</span>
+      </button>
+    </header>
+
+    <nav aria-label="Menú principal" class="grid grid-cols-5 gap-1">
+      <a href="index.html" title="Inicio" class="inline-flex items-center justify-center h-10 bg-light-primary text-light-on-primary border-2 border-light-outline rounded arcade-shadow-sm"><span class="material-symbols-outlined">home</span></a>
+      <a href="ninos.html" title="Niños Elegidos" class="inline-flex items-center justify-center h-10 bg-light-surface-container text-light-on-surface border-2 border-light-outline rounded arcade-shadow-sm"><span class="material-symbols-outlined">groups</span></a>
+      <a href="animal.html" title="Compañero Digital" class="inline-flex items-center justify-center h-10 bg-light-surface-container text-light-on-surface border-2 border-light-outline rounded arcade-shadow-sm"><span class="material-symbols-outlined">pets</span></a>
+      <a href="anima/anima.html" title="Digievolución" class="inline-flex items-center justify-center h-10 bg-light-surface-container text-light-on-surface border-2 border-light-outline rounded arcade-shadow-sm"><span class="material-symbols-outlined">bolt</span></a>
+      <a href="pantalla.html" title="Batalla vs Villanos" class="inline-flex items-center justify-center h-10 bg-light-surface-container text-light-on-surface border-2 border-light-outline rounded arcade-shadow-sm"><span class="material-symbols-outlined">swords</span></a>
+    </nav>
+
+    <main class="flex-1 flex flex-col items-center justify-center gap-6 text-center">
+      <div class="flex flex-col items-center gap-2">
+        <h1 class="font-display text-3xl text-light-on-surface arcade-title-shadow tracking-wider">DIG.MON</h1>
+        <p class="font-body text-sm text-light-on-surface-variant">Aventura Arcade · Tai &amp; Agumon</p>
+      </div>
+
+      <figure class="w-full max-w-xs bg-light-surface-container border-4 border-light-outline rounded arcade-shadow-lg p-2">
+        <div class="overflow-hidden rounded-sm border-2 border-light-outline bg-light-surface">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAgTg4PcPP4r_mOf_mrV5jWGKXHVVHUcL7dX5LZY8XdTA1jy2y_0JvGHFhCL2tUd7pS4OEyX7gS6DSSOkX9FWMW0dcfBnXAqkXWPv1aBygC7mNOkDLQA2OALKMXnwdSGDzuZCZpV5PVfCGoYZfmR2L_djbO4FWSu8l6MECZt051Z9UzXU2-yr4qnIYltZNpW4qOoBXIcIYXE4bYs-M4payTLK_iW_AJqm20p3V0u6VdtG0YivbJo6BlcA" alt="Tai y Agumon" class="w-full aspect-square max-h-56 object-cover block">
+        </div>
+        <figcaption class="pt-1 flex items-center justify-between px-1">
+          <span class="font-label text-xs font-bold text-light-on-surface uppercase">TAI &amp; AGUMON</span>
+          <span class="font-mono text-xs font-semibold text-light-on-surface-variant">NV. 01</span>
+        </figcaption>
+      </figure>
+    </main>
+
+    <footer class="flex flex-col items-center gap-2 w-full">
+      <form id="login-form" class="w-full max-w-xs flex flex-col gap-2" novalidate>
+        <div class="flex flex-col gap-1 text-left">
+          <label for="username" class="font-label text-xs font-bold text-light-on-surface uppercase">Usuario</label>
+          <input id="username" type="text" placeholder="Tai_01" class="w-full px-4 py-2 bg-light-surface-container text-light-on-surface border-4 border-light-outline rounded font-body text-sm">
+        </div>
+        <div class="flex flex-col gap-1 text-left">
+          <label for="password" class="font-label text-xs font-bold text-light-on-surface uppercase">Contraseña</label>
+          <input id="password" type="password" placeholder="••••••••" class="w-full px-4 py-2 bg-light-surface-container text-light-on-surface border-4 border-light-outline rounded font-body text-sm">
+        </div>
+        <button type="submit" class="w-full mt-1 inline-flex items-center justify-center gap-2 px-6 py-4 bg-light-primary text-light-on-primary border-4 border-light-outline rounded arcade-shadow-lg font-headline text-sm uppercase tracking-wider cursor-pointer">
+          <span class="material-symbols-outlined">login</span>
+          <span>ENTRAR</span>
+        </button>
+      </form>
+      <p id="start-status" class="font-mono text-xs text-light-on-surface-variant text-center">INGRESA USUARIO O TOCA ENTRAR</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var soundBtn = document.getElementById('sound-toggle');
+      var soundIcon = document.getElementById('sound-icon');
+      var muted = false;
+      if (soundBtn && soundIcon) {
+        soundBtn.addEventListener('click', function () {
+          muted = !muted;
+          soundIcon.textContent = muted ? 'volume_off' : 'volume_up';
+        });
+      }
+      document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var user = document.getElementById('username').value.trim() || 'Tai_01';
+        try { localStorage.setItem('digimon_usuario', user); } catch (err) {}
+        window.location.href = 'ninos.html';
+      });
+    })();
+  </script>
+</body>
+</html>
