@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIG.MON — Villanos vs Animal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .arcade-box { box-shadow: 5px 5px 0px #1A1600; }
+    .arcade-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #1A1600; }
+  </style>
+</head>
+<body class="bg-[#FFD400] text-[#1A1600] min-h-screen p-4 font-sans">
+  <div class="max-w-md mx-auto flex flex-col gap-4">
+    <header class="flex justify-between items-center bg-[#FFF0C6] border-4 border-[#1A1600] rounded arcade-box p-3">
+      <a href="animal.html" class="arcade-btn px-3 py-1 bg-[#FFE177] font-mono text-xs font-bold uppercase border-2 border-[#1A1600] rounded">&larr; ANIMAL</a>
+      <span class="font-mono text-xs font-bold uppercase">PANTALLA.HTML · VS</span>
+      <a href="ninos.html" class="arcade-btn px-3 py-1 bg-[#005CBA] text-white font-mono text-xs font-bold uppercase border-2 border-[#1A1600] rounded">NINOS</a>
+    </header>
+
+    <div class="grid grid-cols-2 gap-3 text-center">
+      <div class="bg-[#FFF0C6] border-4 border-[#1A1600] rounded arcade-box p-3">
+        <div class="font-mono text-xs font-bold text-[#005CBA]">ANIMAL</div>
+        <div id="vs-animal" class="text-lg font-black uppercase mt-1">Agumon</div>
+      </div>
+      <div class="bg-[#FFDBCC] border-4 border-[#1A1600] rounded arcade-box p-3">
+        <div class="font-mono text-xs font-bold text-[#BA1A1A]">VILLANO</div>
+        <div id="vs-villano" class="text-lg font-black uppercase mt-1">Devimon</div>
+      </div>
+    </div>
+
+    <div class="bg-[#FFF0C6] border-4 border-[#1A1600] rounded arcade-box p-3 flex flex-col gap-2">
+      <span class="font-mono text-xs font-bold uppercase">ELEGIR VILLANO</span>
+      <div class="grid grid-cols-2 gap-2">
+        <button type="button" data-villano="Devimon" class="villano-btn arcade-btn py-2 bg-[#FFE177] font-bold text-xs uppercase border-2 border-[#1A1600] rounded">Devimon</button>
+        <button type="button" data-villano="Etemon" class="villano-btn arcade-btn py-2 bg-[#FFE177] font-bold text-xs uppercase border-2 border-[#1A1600] rounded">Etemon</button>
+        <button type="button" data-villano="Myotismon" class="villano-btn arcade-btn py-2 bg-[#FFE177] font-bold text-xs uppercase border-2 border-[#1A1600] rounded">Myotismon</button>
+        <button type="button" data-villano="Piedmon" class="villano-btn arcade-btn py-2 bg-[#FFE177] font-bold text-xs uppercase border-2 border-[#1A1600] rounded">Piedmon</button>
+      </div>
+    </div>
+
+    <button id="btn-atacar" type="button" class="arcade-btn w-full py-3.5 bg-[#FF6B00] text-[#1A0800] font-black text-base uppercase tracking-wider border-4 border-[#1A1600] rounded arcade-box cursor-pointer">
+      ATACAR VS VILLANO
+    </button>
+
+    <div id="vs-resultado" class="bg-white border-4 border-[#1A1600] rounded arcade-box p-3 font-mono text-xs font-bold">
+      LISTO PARA EL COMBATE: AGUMON VS DEVIMON
+    </div>
+  </div>
+
+  <script>
+    var animalActual = "Agumon";
+    try {
+      var d = JSON.parse(localStorage.getItem("digimon_elegido") || "{}");
+      if (d.animal) animalActual = d.animal;
+    } catch (err) {}
+
+    var villanoActual = "Devimon";
+    document.getElementById("vs-animal").textContent = animalActual;
+    document.getElementById("vs-resultado").textContent = "LISTO PARA EL COMBATE: " + animalActual.toUpperCase() + " VS " + villanoActual.toUpperCase();
+
+    document.querySelectorAll(".villano-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        villanoActual = b.getAttribute("data-villano");
+        document.getElementById("vs-villano").textContent = villanoActual;
+        document.getElementById("vs-resultado").textContent = "LISTO PARA EL COMBATE: " + animalActual.toUpperCase() + " VS " + villanoActual.toUpperCase();
+      });
+    });
+
+    document.getElementById("btn-atacar").addEventListener("click", function () {
+      document.getElementById("vs-resultado").textContent = "COMBATE: " + animalActual.toUpperCase() + " ATACA A " + villanoActual.toUpperCase() + "!";
+    });
+  </script>
+</body>
+</html>
